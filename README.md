@@ -1,10 +1,6 @@
-# Tara Creatives — Multipage Site
+# Tara Creatives — Multipage Site (Updated)
 
-Pages:
-- index.html (home)
-- design.html
-- social.html
-- ai-video.html
-- music.html
+- index.html: Home with brands ticker and 'Let's Work Together' section.
+- Services: design.html, social.html, ai-video.html, music.html, influencer.html, b2b.html.
 
-Deploy: import to Vercel as a static project (Framework: Other, Build: empty, Output: /).
+Deploy on Vercel as a static project (Framework: Other, Build: empty, Output: /).

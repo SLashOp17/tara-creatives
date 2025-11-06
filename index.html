@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Tara Creatives — Guiding Light of Compassion and Protection</title>
-  <meta name="description" content="Tara Creatives home. Graphic Design, Social Media Marketing, AI Video Production, Music Composing with case studies." />
+  <meta name="description" content="Tara Creatives home. Services with links, brands ticker, and contact details." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,85 +13,94 @@
     :root { color-scheme: light dark; }
     html { scroll-behavior: smooth; }
     body { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
+    .underline-fancy {
+      background-image: linear-gradient(currentColor, currentColor);
+      background-position: 0 100%;
+      background-repeat: no-repeat;
+      background-size: 100% 6px;
+      padding-bottom: 6px;
+      line-height: 1.2;
+      display: inline;
+    }
+    .ticker { overflow: hidden; white-space: nowrap; mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
+    .ticker__track { display: inline-block; padding-left: 100%; animation: slide 18s linear infinite; }
+    .ticker__item { display: inline-block; margin: 0 1.5rem; font-weight: 700; opacity: 0.85; }
+    @keyframes slide { 0% { transform: translate3d(0,0,0); } 100% { transform: translate3d(-100%,0,0); } }
+    .svc-a { background-color: rgb(239 246 255); }
+    .svc-b { background-color: rgb(255 241 242); }
   </style>
 </head>
 <body class="bg-white text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
   <header class="sticky top-0 z-40 border-b border-zinc-200/60 dark:border-zinc-800/60 bg-white/80 dark:bg-zinc-950/70 backdrop-blur">
     <nav class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
-      <a href="index.html" class="flex items-center gap-2 font-extrabold tracking-tight text-xl">
-        <span class="inline-flex h-8 w-8 items-center justify-center rounded-xl bg-zinc-900 text-white dark:bg-white dark:text-zinc-900">T</span>
-        Tara Creatives
-      </a>
+      <a href="index.html" class="font-extrabold tracking-tight text-xl">Tara Creatives</a>
+      <div class="relative">
+        <button id="menuBtn" aria-label="Open menu" class="md:hidden inline-flex flex-col gap-1.5 p-2 rounded-lg border border-zinc-200 dark:border-zinc-800">
+          <span class="block w-6 h-0.5 bg-current"></span>
+          <span class="block w-6 h-0.5 bg-current"></span>
+          <span class="block w-6 h-0.5 bg-current"></span>
+        </button>
+        <div id="menu" class="hidden absolute right-0 mt-2 w-48 rounded-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-lg">
+          <a class="block px-4 py-3 text-sm hover:bg-zinc-50 dark:hover:bg-zinc-800" href="index.html#services">Services</a>
+          <a class="block px-4 py-3 text-sm hover:bg-zinc-50 dark:hover:bg-zinc-800" href="index.html#brands">Brands Worked with</a>
+          <a class="block px-4 py-3 text-sm hover:bg-zinc-50 dark:hover:bg-zinc-800" href="index.html#contact">Let's Work Together</a>
+        </div>
+      </div>
       <div class="hidden md:flex items-center gap-6 text-sm font-medium">
         <a href="index.html#services" class="hover:opacity-80">Services</a>
-        <a href="index.html#work" class="hover:opacity-80">Past Work</a>
-        <a href="index.html#contact" class="hover:opacity-80">Contact</a>
+        <a href="index.html#brands" class="hover:opacity-80">Brands</a>
+        <a href="index.html#contact" class="hover:opacity-80">Let's Work</a>
       </div>
-      <a href="index.html#contact" class="inline-flex items-center rounded-xl bg-zinc-900 px-4 py-2 text-white dark:bg-white dark:text-zinc-900 text-sm font-semibold shadow hover:opacity-90">Get in touch</a>
     </nav>
   </header>
 
   <section id="top" class="relative overflow-hidden">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-16 md:py-24 grid md:grid-cols-2 gap-10 items-center">
-      <div>
-        <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">Tara Creatives</h1>
-        <p class="mt-3 text-xl md:text-2xl text-zinc-700 dark:text-zinc-300">Guiding Light of Compassion and Protection</p>
-        <p class="mt-5 text-base md:text-lg text-zinc-600 dark:text-zinc-300 max-w-xl">We help brands express with clarity and heart — through design, social content, AI-driven video, and original music.</p>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="#services" class="rounded-xl bg-zinc-900 px-5 py-3 text-white dark:bg-white dark:text-zinc-900 text-sm font-semibold shadow hover:opacity-90">Explore Services</a>
-          <a href="#work" class="rounded-xl border border-zinc-300 dark:border-zinc-700 px-5 py-3 text-sm font-semibold hover:bg-zinc-50 dark:hover:bg-zinc-900">See Past Work</a>
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-14 md:py-20">
+      <h1 class="text-4xl md:text-6xl font-extrabold leading-tight">Tara Creatives</h1>
+      <p class="mt-3 text-xl md:text-2xl text-zinc-700 dark:text-zinc-300 underline-fancy inline-block">Guiding Light of Compassion and Protection</p>
+      <p class="mt-6 text-base md:text-lg text-zinc-700 dark:text-zinc-300 max-w-3xl">
+        We help brands express with clarity and creativity - through design, social content, Ai driven video, Marketing and Just Quality Leads.
+      </p>
+
+      <div id="brands" class="mt-10">
+        <h3 class="text-lg md:text-xl font-extrabold">Brands Worked with</h3>
+        <div class="mt-4 rounded-2xl border border-zinc-200 dark:border-zinc-800 p-4 ticker">
+          <div class="ticker__track">
+            <span class="ticker__item">Godrej</span>
+            <span class="ticker__item">Amzone Prime</span>
+            <span class="ticker__item">Marks &amp; Spencer</span>
+            <span class="ticker__item">Zupee</span>
+            <span class="ticker__item">Godrej</span>
+            <span class="ticker__item">Amzone Prime</span>
+            <span class="ticker__item">Marks &amp; Spencer</span>
+            <span class="ticker__item">Zupee</span>
+          </div>
         </div>
       </div>
-      <div class="relative">
-        <div class="aspect-video w-full rounded-2xl bg-gradient-to-br from-zinc-100 to-zinc-200 dark:from-zinc-900 dark:to-zinc-800 shadow-inner"></div>
-      </div>
     </div>
   </section>
 
-  <section id="services" class="py-16 md:py-24 bg-zinc-50 dark:bg-zinc-900/40">
+  <section id="services" class="py-12 md:py-16 bg-zinc-50 dark:bg-zinc-900/40">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
       <h2 class="text-2xl md:text-4xl font-extrabold">Services</h2>
-      <p class="mt-3 text-zinc-600 dark:text-zinc-300 max-w-2xl">Open a service to see case studies and past work.</p>
-      <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-        <a href="design.html" class="rounded-2xl border border-zinc-200 dark:border-zinc-800 p-6 hover:shadow-md transition block">
-          <h3 class="text-xl font-bold">Graphic Design</h3>
-          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300">Branding, packaging, campaign creatives, thumbnails.</p>
-        </a>
-        <a href="social.html" class="rounded-2xl border border-zinc-200 dark:border-zinc-800 p-6 hover:shadow-md transition block">
-          <h3 class="text-xl font-bold">Social Media Marketing</h3>
-          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300">Strategy, content calendars, paid ads, analytics.</p>
-        </a>
-        <a href="ai-video.html" class="rounded-2xl border border-zinc-200 dark:border-zinc-800 p-6 hover:shadow-md transition block">
-          <h3 class="text-xl font-bold">AI Video Production</h3>
-          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300">Motion avatars, explainers, shorts & reels.</p>
-        </a>
-        <a href="music.html" class="rounded-2xl border border-zinc-200 dark:border-zinc-800 p-6 hover:shadow-md transition block">
-          <h3 class="text-xl font-bold">Music Composing & Making</h3>
-          <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-300">Original tracks, jingles, background scores.</p>
-        </a>
+      <p class="mt-1 text-sm uppercase tracking-wide text-zinc-500">What We Do?</p>
+      <div class="mt-8 grid md:grid-cols-3 lg:grid-cols-6 gap-4">
+        <a href="design.html" class="svc-a rounded-2xl border border-zinc-200 dark:border-zinc-800 p-5 text-center font-semibold block">Graphic Design</a>
+        <a href="social.html" class="svc-b rounded-2xl border border-zinc-200 dark:border-zinc-800 p-5 text-center font-semibold block">Social Media Marketing</a>
+        <a href="ai-video.html" class="svc-a rounded-2xl border border-zinc-200 dark:border-zinc-800 p-5 text-center font-semibold block">AI Video Production</a>
+        <a href="music.html" class="svc-b rounded-2xl border border-zinc-200 dark:border-zinc-800 p-5 text-center font-semibold block">Music Composing &amp; Making</a>
+        <a href="influencer.html" class="svc-a rounded-2xl border border-zinc-200 dark:border-zinc-800 p-5 text-center font-semibold block">Influencer Marketing</a>
+        <a href="b2b.html" class="svc-b rounded-2xl border border-zinc-200 dark:border-zinc-800 p-5 text-center font-semibold block">B2B Lead Gen</a>
       </div>
     </div>
   </section>
 
-  <section id="work" class="py-16 md:py-20">
+  <section id="contact" class="py-14 md:py-20">
     <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl md:text-4xl font-extrabold">Past Work</h2>
-      <p class="mt-3 text-zinc-600 dark:text-zinc-300 max-w-2xl">Browse by service from above.</p>
-    </div>
-  </section>
-
-  <section id="contact" class="py-16 md:py-24 bg-zinc-50 dark:bg-zinc-900/40">
-    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-      <h2 class="text-2xl md:text-4xl font-extrabold">Contact</h2>
-      <div class="mt-8 grid sm:grid-cols-2 gap-4">
-        <a class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-6 hover:bg-zinc-50 dark:hover:bg-zinc-900 transition" href="mailto:hello@taracreatives.com">
-          <h5 class="font-bold">Email us</h5>
-          <p class="text-sm text-zinc-600 dark:text-zinc-300 mt-1">hello@taracreatives.com</p>
-        </a>
-        <a class="rounded-xl border border-zinc-200 dark:border-zinc-800 p-6 hover:bg-zinc-50 dark:hover:bg-zinc-900 transition" target="_blank" href="#">
-          <h5 class="font-bold">Schedule a meeting</h5>
-          <p class="text-sm text-zinc-600 dark:text-zinc-300 mt-1">Add your Calendly link here</p>
-        </a>
+      <h2 class="text-2xl md:text-4xl font-extrabold">Let's Work Together</h2>
+      <div class="mt-6 rounded-2xl border border-zinc-200 dark:border-zinc-800 p-6 md:p-8">
+        <p class="text-lg md:text-xl">📧 collab@taracreatives.in</p>
+        <p class="mt-2 text-lg md:text-xl">📞 +91 9768300392</p>
       </div>
     </div>
   </section>
@@ -102,6 +111,11 @@
       <div class="text-sm text-zinc-500">Built on Vercel • Multi-page</div>
     </div>
   </footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const btn = document.getElementById('menuBtn');
+    const menu = document.getElementById('menu');
+    if(btn) btn.addEventListener('click', ()=> menu.classList.toggle('hidden'));
+  </script>
 </body>
 </html>
