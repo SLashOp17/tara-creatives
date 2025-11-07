@@ -1,6 +1,7 @@
-# Tara Creatives — Multipage Site (Updated)
+# Tara Creatives — Red/Pink Theme (YouTube/Instagram vibe)
 
-- index.html: Home with brands ticker and 'Let's Work Together' section.
-- Services: design.html, social.html, ai-video.html, music.html, influencer.html, b2b.html.
+- Poppins font, small gradient underline, slower brands ticker.
+- Service landing pages for 6 services.
+- Add your logo by replacing the navbar brand text with an <img>.
 
-Deploy on Vercel as a static project (Framework: Other, Build: empty, Output: /).
+Deploy on Vercel as static site (Framework: Other, Build: empty, Output: /).
