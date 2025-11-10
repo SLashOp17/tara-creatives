@@ -1,1 +1,1 @@
-Tara Creatives — final Swaroop-like site. Replace Calendly / case study links as needed.
+Tara Creatives — final v2. Logo white, increased spacing, white small underlines. Deploy on Vercel.
