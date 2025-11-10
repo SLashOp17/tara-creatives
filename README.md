@@ -1,1 +1,1 @@
-Tara Creatives — Swaroop style site. Replace Calendly link and case study links as needed.
+Tara Creatives — final Swaroop-like site. Replace Calendly / case study links as needed.
