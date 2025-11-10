@@ -1,1 +1,3 @@
-Tara Creatives — Clean & Airy theme. Deploy on Vercel as static site. Replace email/phone/logo as needed.
+Tara Creatives — Modern site inspired by swaroopacharya.vercel.app
+
+Deployed via Vercel. Replace Calendly link as needed.
