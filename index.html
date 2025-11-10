@@ -1,222 +1,181 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tara Creatives</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --accent: #e11d48;
-      --muted: #6b7280;
-      --bg: #f9fafb;
-    }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: var(--bg);
-      color: #0f172a;
-      line-height: 1.7;
-    }
-    header {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 24px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    nav a {
-      text-decoration: none;
-      color: var(--muted);
-      margin-left: 22px;
-      font-weight: 500;
-    }
-    nav a:hover { color: var(--accent); }
-    .hero {
-      max-width: 1100px;
-      margin: 60px auto;
-      padding: 0 20px;
-      text-align: left;
-    }
-    .hero img {
-      height: 70px;
-      margin-bottom: 24px;
-    }
-    .hero h1 {
-      font-size: 42px;
-      font-weight: 700;
-    }
-    .hero h2 {
-      font-size: 20px;
-      color: #111827;
-      position: relative;
-      display: inline-block;
-      padding-bottom: 8px;
-      margin-top: 8px;
-    }
-    .hero h2::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 60%;
-      height: 3px;
-      background: linear-gradient(90deg, var(--accent), #fb7185);
-      border-radius: 2px;
-    }
-    .hero p {
-      margin-top: 16px;
-      color: var(--muted);
-      font-size: 18px;
-      max-width: 700px;
-    }
-    section {
-      max-width: 1100px;
-      margin: 80px auto;
-      padding: 0 20px;
-    }
-    .ticker {
-      overflow: hidden;
-      white-space: nowrap;
-      padding: 14px 0;
-    }
-    .ticker-track {
-      display: inline-block;
-      padding-left: 100%;
-      animation: slide 30s linear infinite;
-    }
-    .ticker-item {
-      display: inline-block;
-      margin: 0 2rem;
-      font-weight: 600;
-      color: var(--muted);
-    }
-    @keyframes slide {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-100%); }
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 24px;
-      margin-top: 30px;
-    }
-    .card {
-      background: white;
-      padding: 24px;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(15,23,42,0.06);
-      border: 1px solid rgba(15,23,42,0.04);
-      text-align: center;
-      font-weight: 600;
-      color: #111827;
-      text-decoration: none;
-    }
-    .card:hover { transform: translateY(-3px); transition: 0.3s ease; }
-    .whyus {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 24px;
-      margin-top: 24px;
-    }
-    .whyus div {
-      background: white;
-      padding: 28px;
-      border-radius: 12px;
-      box-shadow: 0 6px 20px rgba(15,23,42,0.06);
-      border: 1px solid rgba(15,23,42,0.04);
-    }
-    .contact {
-      text-align: center;
-      padding: 60px 20px;
-    }
-    .contact h2 { font-size: 26px; margin-bottom: 12px; }
-    .contact p { font-size: 16px; color: var(--muted); margin: 6px 0; }
-    .contact a.button {
-      display: inline-block;
-      margin-top: 16px;
-      padding: 12px 24px;
-      background: linear-gradient(90deg, var(--accent), #fb7185);
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      font-size: 14px;
-      color: var(--muted);
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tara Creatives</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0b1020; /* dark navy like reference */
+  --panel:#0f1724;
+  --muted:#9aa3b2;
+  --accent:#ff3b30; /* red accent */
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;background:var(--bg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto; color:#e6eef8;-webkit-font-smoothing:antialiased}
+/* Loader (Pac-Man) */
+#loader{position:fixed;inset:0;display:flex;align-items:center;justify-content:center;background:var(--bg);z-index:9999}
+.pacman{width:64px;height:64px;position:relative}
+.pacman .mouth{width:64px;height:64px;border-radius:50%;background:linear-gradient(45deg,#ffd54d,#ffb74d);animation:chomp .6s infinite}
+.pacman .dot{position:absolute;top:26px;left:78px;width:12px;height:12px;border-radius:50%;background:#fff;animation:dot 1.2s infinite linear}
+@keyframes chomp{0%{clip-path:polygon(0% 0%,100% 0%,100% 100%,0% 100%)}50%{clip-path:polygon(0% 0%,100% 50%,0% 100%)}100%{clip-path:polygon(0% 0%,100% 0%,100% 100%,0% 100%)}}
+@keyframes dot{0%{transform:translateX(0);opacity:0}30%{opacity:1}100%{transform:translateX(-120px);opacity:0}}
+
+/* Page layout matching reference: narrow centered content */
+.container{max-width:880px;margin:0 auto;padding:36px 20px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 0}
+.logo-wrap{display:flex;align-items:center;gap:12px}
+.logo-img{height:44px;width:auto;display:block}
+
+/* Hide white border by placing logo on same bg and using mix-blend? */
+.logo-img { background: transparent; display:block; }
+
+/* Nav for larger screens */
+nav.desktop{display:none}
+@media(min-width:900px){nav.desktop{display:flex;gap:18px}nav.mobile{display:none}}
+
+/* Hamburger */
+.menu-btn{width:44px;height:38px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:center;cursor:pointer;background:transparent}
+.menu-btn span{display:block;width:18px;height:2px;background:rgba(230,238,248,0.9);position:relative}
+.menu-btn span:before,.menu-btn span:after{content:'';position:absolute;height:2px;width:18px;background:rgba(230,238,248,0.9);left:0}
+.menu-btn span:before{top:-6px}.menu-btn span:after{top:6px}
+
+/* Mobile menu drawer */
+.mobile-drawer{position:fixed;right:16px;top:64px;background:linear-gradient(180deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02));backdrop-filter:blur(8px);border-radius:12px;padding:12px;box-shadow:0 8px 30px rgba(2,6,23,0.6);display:none;z-index:1000}
+.mobile-drawer a{display:block;padding:10px 14px;color:var(--muted);text-decoration:none;border-radius:8px}
+.mobile-drawer a:hover{color:#fff;background:rgba(255,255,255,0.02)}
+
+/* Hero */
+.hero{display:flex;flex-direction:column;gap:18px;padding-top:40px;padding-bottom:40px}
+.h1{font-size:44px;line-height:1.02;margin:0;font-weight:700;color:#fff}
+.subline{font-size:18px;color:var(--muted);display:inline-block;position:relative;padding-bottom:10px}
+.subline:after{content:'';position:absolute;left:0;bottom:0;height:3px;width:48%;background:linear-gradient(90deg,var(--accent),#ff7ab6);border-radius:2px}
+
+/* Services grid */
+.section-title{font-size:18px;color:var(--muted);text-transform:uppercase;letter-spacing:1px;margin-bottom:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-top:18px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:22px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);text-align:center;font-weight:600;color:#fff;text-decoration:none}
+.card:hover{transform: translateY(-6px);transition:all .28s ease}
+
+/* Why us */
+.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:18px}
+.why{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:20px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);color:var(--muted)}
+
+/* Contact */
+.contact{margin-top:28px;padding:28px;border-radius:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);text-align:center}
+.contact a.cta{display:inline-block;margin-top:12px;padding:12px 18px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#ff7ab6);color:#fff;text-decoration:none;font-weight:700}
+
+/* Footer */
+footer{padding:36px 0;text-align:center;color:var(--muted);font-size:14px}
+
+/* small screens tweaks: remove extra top-left text, ensure logo only and menu */
+@media(max-width:900px){
+  .h1{font-size:28px}
+  .subline{font-size:15px;padding-bottom:8px}
+  /* remove any leading small text if present */
+}
+
+/* smooth scroll anchor */
+html { scroll-behavior: smooth; }
+</style>
 </head>
 <body>
 
-<header>
-  <img src="logo.png" alt="Tara Creatives Logo" style="height:42px;">
-  <nav>
+<div id="loader"><div class="pacman"><div class="mouth"></div><div class="dot"></div></div></div>
+
+<header class="container">
+  <div class="logo-wrap"><img src="logo.png" class="logo-img" alt="Tara Creatives logo"></div>
+
+  <nav class="desktop">
     <a href="#services">Services</a>
     <a href="#brands">Brands</a>
     <a href="#whyus">Why us</a>
     <a href="#contact">Contact</a>
   </nav>
-</header>
 
-<section class="hero">
-  <img src="logo.png" alt="Tara Creatives Logo">
-  <h1>Tara Creatives</h1>
-  <h2>Guiding Light of Compassion and Protection</h2>
-  <p>We help brands express with clarity and creativity — through design, social content, AI-driven video, marketing, and quality leads.</p>
-</section>
-
-<section id="brands">
-  <h2 style="font-size:24px;">Brands Worked With</h2>
-  <div class="ticker">
-    <div class="ticker-track">
-      <span class="ticker-item">Godrej</span>
-      <span class="ticker-item">Amazon Prime</span>
-      <span class="ticker-item">Marks &amp; Spencer</span>
-      <span class="ticker-item">Zupee</span>
-      <span class="ticker-item">Godrej</span>
-      <span class="ticker-item">Amazon Prime</span>
-      <span class="ticker-item">Marks &amp; Spencer</span>
-      <span class="ticker-item">Zupee</span>
+  <div class="menu">
+    <div class="menu-btn" id="menuBtn"><span></span></div>
+    <div class="mobile-drawer" id="drawer" aria-hidden="true">
+      <a href="#services">Services</a>
+      <a href="#brands">Brands</a>
+      <a href="#whyus">Why us</a>
+      <a href="#contact">Contact</a>
     </div>
   </div>
-</section>
+</header>
 
-<section id="services">
-  <h2 style="font-size:24px;">Services</h2>
-  <div class="grid">
-    <a href="#" class="card">Graphic Design</a>
-    <a href="#" class="card">Social Media Marketing</a>
-    <a href="#" class="card">AI Video Production</a>
-    <a href="#" class="card">Music Composing &amp; Making</a>
-    <a href="#" class="card">Influencer Marketing</a>
-    <a href="#" class="card">B2B Lead Gen</a>
-  </div>
-</section>
+<main class="container">
 
-<section id="whyus">
-  <h2 style="font-size:24px;">Why Us</h2>
-  <div class="whyus">
-    <div><h3>Proven Outcomes</h3><p>Clear targets, measurable results, transparent reports.</p></div>
-    <div><h3>Creator + Performance DNA</h3><p>We merge storytelling and performance for real growth.</p></div>
-    <div><h3>Fast & Flexible</h3><p>Small, efficient team delivering quick turnarounds.</p></div>
-  </div>
-</section>
+  <section class="hero" id="top">
+    <h1 class="h1">Tara Creatives</h1>
+    <div class="subline">Guiding Light of Compassion and Protection</div>
+    <p style="color:var(--muted);max-width:680px">We help brands express with clarity and creativity — through design, social content, AI-driven video, marketing, and quality leads.</p>
+  </section>
 
-<section id="contact" class="contact">
-  <h2>Let's Work Together</h2>
-  <p>📧 <a href="mailto:collab@taracreatives.in" style="color:var(--accent);text-decoration:none;">collab@taracreatives.in</a></p>
-  <p>📞 +91 9768300392</p>
-  <a href="https://calendly.com/" target="_blank" class="button">Schedule a Meeting</a>
-</section>
+  <section id="brands">
+    <div class="section-title">Brands Worked With</div>
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span class="ticker-item">Godrej</span>
+        <span class="ticker-item">Amazon Prime</span>
+        <span class="ticker-item">Marks &amp; Spencer</span>
+        <span class="ticker-item">Zupee</span>
+        <span class="ticker-item">Godrej</span>
+        <span class="ticker-item">Amazon Prime</span>
+      </div>
+    </div>
+  </section>
 
-<footer>
-  Designed & Developed by Siddhesh
-</footer>
+  <section id="services">
+    <div class="section-title">What we do?</div>
+    <div class="grid">
+      <a class="card" href="graphic-design.html">Graphic Design</a>
+      <a class="card" href="social-media.html">Social Media Marketing</a>
+      <a class="card" href="ai-video.html">AI Video Production</a>
+      <a class="card" href="music.html">Music Composing &amp; Making</a>
+      <a class="card" href="influencer.html">Influencer Marketing</a>
+      <a class="card" href="b2b.html">B2B Lead Gen</a>
+    </div>
+  </section>
+
+  <section id="whyus">
+    <div class="section-title">Why us</div>
+    <div class="why-grid">
+      <div class="why"><strong>Proven outcomes</strong><div style="margin-top:8px;color:#b8c6d6">Clear targets and measured uplift in business metrics.</div></div>
+      <div class="why"><strong>Creator + Performance DNA</strong><div style="margin-top:8px;color:#b8c6d6">Creative-first content that converts.</div></div>
+      <div class="why"><strong>Fast, flexible builds</strong><div style="margin-top:8px;color:#b8c6d6">Small team, quick turnarounds, clear comms.</div></div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2 style="color:#fff;margin:0;font-size:22px">Let's Work Together</h2>
+    <div style="color:var(--muted);margin-top:8px">📧 collab@taracreatives.in</div>
+    <div style="color:var(--muted);margin-top:6px">📞 +91 9768300392</div>
+    <a class="cta" href="https://calendly.com/" target="_blank">Schedule a Meeting</a>
+  </section>
+
+  <footer>Designed &amp; Developed by Siddhesh</footer>
+</main>
+
+<script>
+// loader hide after content loads
+window.addEventListener('load', ()=>{
+  const loader = document.getElementById('loader');
+  loader.style.transition='opacity .5s ease';
+  loader.style.opacity='0';
+  setTimeout(()=>loader.remove(),600);
+});
+
+// mobile drawer toggle
+const menuBtn = document.getElementById('menuBtn');
+const drawer = document.getElementById('drawer');
+menuBtn.addEventListener('click', ()=>{
+  const open = drawer.style.display === 'block';
+  drawer.style.display = open? 'none':'block';
+  drawer.setAttribute('aria-hidden', open? 'true':'false');
+});
+</script>
 
 </body>
 </html>

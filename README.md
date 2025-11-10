@@ -1,3 +1,1 @@
-Tara Creatives — Modern site inspired by swaroopacharya.vercel.app
-
-Deployed via Vercel. Replace Calendly link as needed.
+Tara Creatives — Swaroop style site. Replace Calendly link and case study links as needed.
