@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Tara Creatives</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#071021;--muted:rgba(255,255,255,0.65);--muted-2:rgba(255,255,255,0.45);--white:rgba(255,255,255,1);--accent:#ff5b6b}
+*{box-sizing:border-box}html,body{height:100%;margin:0;background:var(--bg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto;color:var(--white);-webkit-font-smoothing:antialiased}
+.container{max-width:1000px;margin:0 auto;padding:72px 24px}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.logo-img{height:86px;width:auto;display:block}
+.menu-btn{width:50px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;cursor:pointer;background:transparent}
+.menu-btn span{display:block;width:20px;height:2px;background:var(--white);position:relative;border-radius:2px}
+.menu-btn span:before,.menu-btn span:after{content:'';position:absolute;height:2px;width:20px;background:var(--white);left:0;border-radius:2px}
+.menu-btn span:before{top:-8px}.menu-btn span:after{top:8px}
+.mobile-drawer{position:fixed;right:18px;top:96px;background:rgba(255,255,255,0.03);backdrop-filter:blur(8px);border-radius:12px;padding:12px;box-shadow:0 12px 50px rgba(0,0,0,0.6);display:none;z-index:1000}
+.mobile-drawer a{display:block;padding:10px 14px;color:var(--muted);text-decoration:none;border-radius:8px}
+.hero{display:flex;flex-direction:column;gap:20px;padding-top:72px;padding-bottom:72px;opacity:0;transform:translateY(12px);animation:fadeIn .6s ease forwards .12s}
+.h1{font-size:64px;line-height:1.02;margin:0;font-weight:700;color:var(--white);letter-spacing:-0.5px}
+.subline{font-size:20px;color:var(--muted);display:inline-block;position:relative;padding-bottom:16px}
+.subline:after{content:'';position:absolute;left:0;bottom:0;height:4px;width:56px;background:linear-gradient(90deg,rgba(255,255,255,0.95),rgba(255,255,255,0.7));border-radius:6px;opacity:0.12}
+.lead{color:var(--muted-2);max-width:760px;font-size:18px;margin-top:8px;line-height:1.6}
+.section-title{font-size:18px;color:var(--white);font-weight:700;margin-bottom:18px;position:relative;padding-bottom:18px}
+.section-title:after{content:'';position:absolute;left:0;bottom:0;height:4px;width:48px;background:linear-gradient(90deg,rgba(255,255,255,0.95),rgba(255,255,255,0.7));border-radius:6px;opacity:0.10}
+.ticker{overflow:hidden;white-space:nowrap;padding:20px 0;margin-top:10px}
+.ticker-track{display:inline-block;padding-left:100%;animation:slide 44s linear infinite}
+.ticker-item{display:inline-block;margin:0 2.5rem;font-weight:700;color:var(--muted-2);font-size:17px;opacity:0.95}
+@keyframes slide{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:24px}
+.card{background:rgba(255,255,255,0.02);padding:32px;border-radius:16px;border:1px solid rgba(255,255,255,0.04);text-align:center;font-weight:800;color:var(--white);text-decoration:none;transition:transform .32s ease, box-shadow .32s ease}
+.card:hover{transform:translateY(-10px);box-shadow:0 18px 50px rgba(0,0,0,0.6)}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:22px}
+.why{background:rgba(255,255,255,0.015);padding:28px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);color:var(--muted-2);line-height:1.5}
+.contact{margin-top:48px;padding:38px;border-radius:16px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);text-align:center}
+.contact h2{font-size:24px;margin:0;padding-bottom:12px;position:relative;display:inline-block}
+.contact h2:after{content:'';position:absolute;left:0;bottom:0;height:4px;width:48px;background:linear-gradient(90deg,rgba(255,255,255,0.95),rgba(255,255,255,0.7));border-radius:6px;opacity:0.12}
+.contact .links{margin-top:14px;color:var(--muted-2);font-size:17px}
+.contact a.cta{display:inline-block;margin-top:18px;padding:14px 22px;border-radius:14px;background:linear-gradient(90deg,var(--accent),#ff7ab6);color:#fff;text-decoration:none;font-weight:800}
+footer{padding:56px 0;text-align:center;color:var(--muted-2);font-size:14px}
+section{padding-top:56px;padding-bottom:56px}
+@media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}.why-grid{grid-template-columns:repeat(2,1fr)}.h1{font-size:48px}.logo-img{height:72px}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr}.h1{font-size:32px}.logo-img{height:58px}.container{padding:40px 16px}.subline:after{width:44px;height:3px}}
+@keyframes fadeIn{to{opacity:1;transform:none}}
+</style></head><body>
+<header class="container">
+  <div><img src="logo-white.png" class="logo-img" alt="Tara Creatives logo"></div>
+  <div class="menu"><div class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span></div>
+    <div class="mobile-drawer" id="drawer" aria-hidden="true">
+      <a href="#services">Services</a>
+      <a href="#brands">Brands</a>
+      <a href="#whyus">Why us</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</header>
+<main class="container">
+  <section class="hero" id="top">
+    <h1 class="h1">Tara Creatives</h1>
+    <div class="subline">Leading brands forward with the light of empathy and trust.</div>
+    <div class="lead">Transforming ideas into impact — creative visuals, purposeful content, smart AI videos, and leads that grow your brand.</div>
+  </section>
+  <section id="brands">
+    <div class="section-title">Brands Worked With</div>
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span class="ticker-item">Godrej</span>
+        <span class="ticker-item">Amazon Prime</span>
+        <span class="ticker-item">Marks &amp; Spencer</span>
+        <span class="ticker-item">Zupee</span>
+        <span class="ticker-item">Godrej</span>
+        <span class="ticker-item">Amazon Prime</span>
+      </div>
+    </div>
+  </section>
+  <section id="services">
+    <div class="section-title">What we do?</div>
+    <div class="grid">
+      <a class="card" href="influencer-marketing.html">Influencer Marketing</a>
+      <a class="card" href="b2b-lead-gen.html">B2B Lead Gen</a>
+      <a class="card" href="graphic-design.html">Graphic Design</a>
+      <a class="card" href="social-media.html">Social Media Marketing</a>
+      <a class="card" href="ai-video.html">AI Video Production</a>
+      <a class="card" href="music.html">Music Composing &amp; Making</a>
+    </div>
+  </section>
+  <section id="whyus">
+    <div class="section-title">Why us</div>
+    <div class="why-grid">
+      <div class="why"><strong>Proven outcomes</strong><div style="margin-top:10px;color:var(--muted-2)">Clear targets and measured uplift.</div></div>
+      <div class="why"><strong>Creator + Performance DNA</strong><div style="margin-top:10px;color:var(--muted-2)">Creative-first content that converts.</div></div>
+      <div class="why"><strong>Fast, flexible builds</strong><div style="margin-top:10px;color:var(--muted-2)">Small team. Quick turnarounds.</div></div>
+    </div>
+  </section>
+  <section id="contact" class="contact">
+    <h2>Let's Work together</h2>
+    <div class="links">📧 <a href="mailto:collab@taracreatives.in" style="color:var(--white);text-decoration:underline">collab@taracreatives.in</a><br>📞 <a href="tel:+919768300392" style="color:var(--white);text-decoration:underline">+91 9768300392</a></div>
+    <a class="cta" href="https://calendly.com/" target="_blank" rel="noopener">Schedule a Meeting</a>
+  </section>
+  <footer>Designed &amp; Developed by Siddhesh</footer>
+</main>
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const drawer = document.getElementById('drawer');
+menuBtn.addEventListener('click', ()=>{const open = drawer.style.display === 'block';drawer.style.display = open? 'none':'block';drawer.setAttribute('aria-hidden', open? 'true':'false');});
+window.addEventListener('DOMContentLoaded', ()=>{document.querySelector('.hero').style.opacity = '1';document.querySelector('.hero').style.transform = 'none';});
+</script></body></html>
