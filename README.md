@@ -1,1 +1,1 @@
-Tara Creatives — Modern Aesthetic single-page build. Upload to GitHub and redeploy on Vercel.
+Tara Creatives — Final desktop & mobile responsive build. Links panel, big headlines, continuous animated background.
