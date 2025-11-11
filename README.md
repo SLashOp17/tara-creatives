@@ -1,2 +1,0 @@
-Tara Creatives — final v2. Logo white, increased spacing, white small underlines. Deploy on Vercel.
-Force redeploy
