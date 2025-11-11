@@ -1,1 +1,1 @@
-Tara Creatives — Animated background edition. White logo included. Deploy on Vercel.
+Tara Creatives — Fullpage animated hero build. Deploy to Vercel.
