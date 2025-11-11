@@ -1,1 +1,1 @@
-Tara Creatives — deluxe build with white logo and increased spacing. Deploy on Vercel.
+Tara Creatives — Animated background edition. White logo included. Deploy on Vercel.

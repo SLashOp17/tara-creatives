@@ -1,47 +1,76 @@
 <!doctype html>
-<html lang="en">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Tara Creatives</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#071021;--muted:rgba(255,255,255,0.65);--muted-2:rgba(255,255,255,0.45);--white:rgba(255,255,255,1);--accent:#ff5b6b}
-*{box-sizing:border-box}html,body{height:100%;margin:0;background:var(--bg);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto;color:var(--white);-webkit-font-smoothing:antialiased}
-.container{max-width:1000px;margin:0 auto;padding:72px 24px}
-header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
-.logo-img{height:86px;width:auto;display:block}
-.menu-btn{width:50px;height:44px;border-radius:12px;border:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;cursor:pointer;background:transparent}
-.menu-btn span{display:block;width:20px;height:2px;background:var(--white);position:relative;border-radius:2px}
-.menu-btn span:before,.menu-btn span:after{content:'';position:absolute;height:2px;width:20px;background:var(--white);left:0;border-radius:2px}
-.menu-btn span:before{top:-8px}.menu-btn span:after{top:8px}
-.mobile-drawer{position:fixed;right:18px;top:96px;background:rgba(255,255,255,0.03);backdrop-filter:blur(8px);border-radius:12px;padding:12px;box-shadow:0 12px 50px rgba(0,0,0,0.6);display:none;z-index:1000}
-.mobile-drawer a{display:block;padding:10px 14px;color:var(--muted);text-decoration:none;border-radius:8px}
-.hero{display:flex;flex-direction:column;gap:20px;padding-top:72px;padding-bottom:72px;opacity:0;transform:translateY(12px);animation:fadeIn .6s ease forwards .12s}
-.h1{font-size:64px;line-height:1.02;margin:0;font-weight:700;color:var(--white);letter-spacing:-0.5px}
-.subline{font-size:20px;color:var(--muted);display:inline-block;position:relative;padding-bottom:16px}
-.subline:after{content:'';position:absolute;left:0;bottom:0;height:4px;width:56px;background:linear-gradient(90deg,rgba(255,255,255,0.95),rgba(255,255,255,0.7));border-radius:6px;opacity:0.12}
-.lead{color:var(--muted-2);max-width:760px;font-size:18px;margin-top:8px;line-height:1.6}
-.section-title{font-size:18px;color:var(--white);font-weight:700;margin-bottom:18px;position:relative;padding-bottom:18px}
-.section-title:after{content:'';position:absolute;left:0;bottom:0;height:4px;width:48px;background:linear-gradient(90deg,rgba(255,255,255,0.95),rgba(255,255,255,0.7));border-radius:6px;opacity:0.10}
-.ticker{overflow:hidden;white-space:nowrap;padding:20px 0;margin-top:10px}
-.ticker-track{display:inline-block;padding-left:100%;animation:slide 44s linear infinite}
-.ticker-item{display:inline-block;margin:0 2.5rem;font-weight:700;color:var(--muted-2);font-size:17px;opacity:0.95}
-@keyframes slide{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:24px}
-.card{background:rgba(255,255,255,0.02);padding:32px;border-radius:16px;border:1px solid rgba(255,255,255,0.04);text-align:center;font-weight:800;color:var(--white);text-decoration:none;transition:transform .32s ease, box-shadow .32s ease}
-.card:hover{transform:translateY(-10px);box-shadow:0 18px 50px rgba(0,0,0,0.6)}
-.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:22px}
-.why{background:rgba(255,255,255,0.015);padding:28px;border-radius:14px;border:1px solid rgba(255,255,255,0.03);color:var(--muted-2);line-height:1.5}
-.contact{margin-top:48px;padding:38px;border-radius:16px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);text-align:center}
-.contact h2{font-size:24px;margin:0;padding-bottom:12px;position:relative;display:inline-block}
-.contact h2:after{content:'';position:absolute;left:0;bottom:0;height:4px;width:48px;background:linear-gradient(90deg,rgba(255,255,255,0.95),rgba(255,255,255,0.7));border-radius:6px;opacity:0.12}
-.contact .links{margin-top:14px;color:var(--muted-2);font-size:17px}
-.contact a.cta{display:inline-block;margin-top:18px;padding:14px 22px;border-radius:14px;background:linear-gradient(90deg,var(--accent),#ff7ab6);color:#fff;text-decoration:none;font-weight:800}
-footer{padding:56px 0;text-align:center;color:var(--muted-2);font-size:14px}
-section{padding-top:56px;padding-bottom:56px}
-@media(max-width:980px){.grid{grid-template-columns:repeat(2,1fr)}.why-grid{grid-template-columns:repeat(2,1fr)}.h1{font-size:48px}.logo-img{height:72px}}
-@media(max-width:560px){.grid{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr}.h1{font-size:32px}.logo-img{height:58px}.container{padding:40px 16px}.subline:after{width:44px;height:3px}}
+:root{--white:rgba(255,255,255,1);--muted:rgba(255,255,255,0.75);--muted-2:rgba(255,255,255,0.45);--accent:#00e5ff}
+*{box-sizing:border-box}html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto; -webkit-font-smoothing:antialiased;background:#05010a;color:var(--white)}
+/* animated background using layered gradients and animation */
+.bg-wrap{position:fixed;inset:0;z-index:-1;overflow:hidden}
+.bg{position:absolute;inset:-20%;background:linear-gradient(120deg,#071426,#2b0f4b 40%,#3b0f2f 60%);filter:blur(20px);opacity:0.75;transform:scale(1.2);animation:move 18s linear infinite}
+.bg:after{content:'';position:absolute;inset:0;background:conic-gradient(from 180deg at 50% 50%, rgba(0,229,255,0.06), rgba(255,75,150,0.06), rgba(120,50,255,0.06), rgba(0,229,255,0.06));mix-blend-mode:screen;animation:spin 14s linear infinite}
+@keyframes move{0%{transform:translateX(-10%) scale(1.15)}50%{transform:translateX(10%) scale(1.25)}100%{transform:translateX(-10%) scale(1.15)}}
+@keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+
+/* container and header */
+.container{max-width:1200px;margin:0 auto;padding:96px 28px}
+header{display:flex;align-items:center;justify-content:space-between;padding:18px 0;position:relative;z-index:2}
+.logo-img{height:120px;width:auto;display:block}
+
+/* hamburger */
+.menu-btn{width:56px;height:50px;border-radius:12px;border:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:center;cursor:pointer;background:transparent}
+.menu-btn span{display:block;width:22px;height:2px;background:var(--white);position:relative;border-radius:2px}
+.menu-btn span:before,.menu-btn span:after{content:'';position:absolute;height:2px;width:22px;background:var(--white);left:0;border-radius:2px}
+.menu-btn span:before{top:-9px}.menu-btn span:after{top:9px}
+
+/* hero */
+.hero{display:flex;flex-direction:column;gap:24px;padding-top:88px;padding-bottom:88px;opacity:0;transform:translateY(16px);animation:fadeIn .6s ease forwards .12s;position:relative;z-index:2}
+.h1{font-size:84px;line-height:1.02;margin:0;font-weight:800;color:var(--white);letter-spacing:-0.6px;text-shadow:0 8px 30px rgba(20,10,40,0.4)}
+.subline{font-size:22px;color:var(--muted);display:inline-block;position:relative;padding-bottom:18px}
+.subline:after{content:'';position:absolute;left:0;bottom:0;height:5px;width:64px;background:var(--white);opacity:0.12;border-radius:8px}
+.lead{color:var(--muted-2);max-width:980px;font-size:19px;margin-top:10px;line-height:1.6}
+
+/* section titles */
+.section-title{font-size:20px;color:var(--white);font-weight:700;margin-bottom:22px;position:relative;padding-bottom:20px}
+.section-title:after{content:'';position:absolute;left:0;bottom:0;height:5px;width:56px;background:var(--white);opacity:0.10;border-radius:8px}
+
+/* brands ticker - slightly faster continuous and smoother */
+.ticker{overflow:hidden;white-space:nowrap;padding:20px 0;margin-top:14px}
+.ticker-track{display:inline-block;padding-left:100%;animation:slide 20s linear infinite}
+.ticker-item{display:inline-block;margin:0 3.5rem;font-weight:800;color:var(--muted-2);font-size:18px;opacity:0.98;letter-spacing:0.4px}
+@keyframes slide{0%{transform:translateX(0)}100%{transform:translateX(-100%)}} 
+
+/* services grid */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;margin-top:28px}
+.card{background:rgba(255,255,255,0.03);padding:40px;border-radius:18px;border:1px solid rgba(255,255,255,0.04);text-align:center;font-weight:800;color:var(--white);text-decoration:none;transition:transform .32s ease,box-shadow .32s ease}
+.card:hover{transform:translateY(-12px);box-shadow:0 30px 90px rgba(10,6,30,0.6)}
+
+/* why us */
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:26px}
+.why{background:rgba(255,255,255,0.015);padding:34px;border-radius:16px;border:1px solid rgba(255,255,255,0.03);color:var(--muted-2);line-height:1.6}
+
+/* contact */
+.contact{margin-top:56px;padding:44px;border-radius:20px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);text-align:center}
+.contact h2{font-size:28px;margin:0;padding-bottom:14px;position:relative;display:inline-block}
+.contact h2:after{content:'';position:absolute;left:0;bottom:0;height:5px;width:56px;background:var(--white);opacity:0.12;border-radius:8px}
+.contact .links{margin-top:16px;color:var(--muted-2);font-size:18px}
+.contact a.cta{display:inline-block;margin-top:20px;padding:14px 26px;border-radius:16px;background:linear-gradient(90deg,#00e5ff,#ff6fa6);color:#051023;text-decoration:none;font-weight:800}
+
+/* footer */
+footer{padding:88px 0;text-align:center;color:var(--muted-2);font-size:15px}
+
+/* spacing - larger on desktop */
+section{padding-top:84px;padding-bottom:84px}
+
+/* responsive tweaks */
+@media(max-width:1200px){.container{padding:72px 18px}.h1{font-size:64px}.logo-img{height:110px}}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}.why-grid{grid-template-columns:repeat(2,1fr)}.h1{font-size:44px}.logo-img{height:88px}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.why-grid{grid-template-columns:1fr}.h1{font-size:28px}.logo-img{height:68px}.subline:after{width:44px;height:4px}}
+
+/* fadeIn */
 @keyframes fadeIn{to{opacity:1;transform:none}}
 </style></head><body>
+<div class="bg-wrap"><div class="bg"></div></div>
 <header class="container">
   <div><img src="logo-white.png" class="logo-img" alt="Tara Creatives logo"></div>
   <div class="menu"><div class="menu-btn" id="menuBtn" aria-label="Open menu"><span></span></div>
@@ -86,9 +115,9 @@ section{padding-top:56px;padding-bottom:56px}
   <section id="whyus">
     <div class="section-title">Why us</div>
     <div class="why-grid">
-      <div class="why"><strong>Proven outcomes</strong><div style="margin-top:10px;color:var(--muted-2)">Clear targets and measured uplift.</div></div>
-      <div class="why"><strong>Creator + Performance DNA</strong><div style="margin-top:10px;color:var(--muted-2)">Creative-first content that converts.</div></div>
-      <div class="why"><strong>Fast, flexible builds</strong><div style="margin-top:10px;color:var(--muted-2)">Small team. Quick turnarounds.</div></div>
+      <div class="why"><strong>Proven outcomes</strong><div style="margin-top:12px;color:var(--muted-2)">Clear targets and measured uplift.</div></div>
+      <div class="why"><strong>Creator + Performance DNA</strong><div style="margin-top:12px;color:var(--muted-2)">Creative-first content that converts.</div></div>
+      <div class="why"><strong>Fast, flexible builds</strong><div style="margin-top:12px;color:var(--muted-2)">Small team. Quick turnarounds.</div></div>
     </div>
   </section>
   <section id="contact" class="contact">
