@@ -1,1 +1,1 @@
-Tara Creatives — Animated CSS background fullpage build. Replace logo if needed.
+Tara Creatives — Digital Vibe build. Animated CSS background (mixed warm+cool). Deploy to Vercel.
