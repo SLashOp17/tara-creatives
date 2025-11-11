@@ -1,1 +1,1 @@
-Tara Creatives — Fullpage animated hero build. Deploy to Vercel.
+Tara Creatives — Animated CSS background fullpage build. Replace logo if needed.
