@@ -1,1 +1,1 @@
-Tara Creatives — Dynamic Digital Vibe build. High contrast animated CSS background.
+Tara Creatives — Modern Aesthetic single-page build. Upload to GitHub and redeploy on Vercel.
