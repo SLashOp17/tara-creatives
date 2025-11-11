@@ -1,55 +1,46 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Tara Creatives — Digital Vibe</title>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Tara Creatives — Dynamic Digital Vibe</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--white:#ffffff;--muted:rgba(255,255,255,0.85);--muted-2:rgba(255,255,255,0.55)}
+:root{--white:#fff;--muted:rgba(255,255,255,0.9)}
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto;background:#05010a;color:var(--white);-webkit-font-smoothing:antialiased;overflow:hidden}
-
-/* fullpage sections */
+html,body{height:100%;background:#030206;color:var(--white);font-family:Inter,system-ui;-webkit-font-smoothing:antialiased;overflow:hidden}
 .fullpage{height:100vh;width:100vw;position:relative;overflow:hidden}
 .section{height:100vh;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:40px}
 
-/* Animated digital vibe background: mix warm + cool, stronger glow and visible */
-.bg-scene{position:fixed;inset:0;z-index:-3;pointer-events:none;overflow:hidden;background:#05010a}
-.gradient-back{position:absolute;inset:-30%;background:radial-gradient(circle at 20% 20%, rgba(0,229,255,0.08), transparent 10%), radial-gradient(circle at 80% 80%, rgba(255,100,50,0.08), transparent 12%);filter:blur(30px);transform:scale(1.05);animation:gradShift 22s linear infinite}
-.blob{position:absolute;border-radius:50%;mix-blend-mode:screen;filter:blur(18px);opacity:0.95}
-.blob.w1{width:640px;height:640px;left:-8%;top:6%;background:radial-gradient(circle at 30% 30%, rgba(255,130,80,0.95), rgba(255,70,110,0.8) 45%, rgba(255,70,110,0) 75%);animation:move1 24s ease-in-out infinite;box-shadow:0 40px 120px rgba(255,80,100,0.12)}
-.blob.c1{width:520px;height:520px;right:-10%;top:8%;background:radial-gradient(circle at 35% 35%, rgba(0,220,255,0.95), rgba(80,60,255,0.8) 45%, rgba(80,60,255,0) 75%);animation:move2 26s ease-in-out infinite;box-shadow:0 40px 120px rgba(40,80,255,0.08)}
-.blob.m1{width:420px;height:420px;left:18%;bottom:-6%;background:radial-gradient(circle at 30% 30%, rgba(220,80,255,0.95), rgba(120,60,200,0.8) 45%, rgba(120,60,200,0) 75%);animation:move3 20s ease-in-out infinite;opacity:0.95;box-shadow:0 40px 120px rgba(150,80,220,0.08)}
+/* Strong, visible animated background */
+.bg-scene{position:fixed;inset:0;z-index:-4;pointer-events:none;overflow:hidden;background:radial-gradient(ellipse at 20% 20%, rgba(10,10,25,0.6), transparent 20%), radial-gradient(ellipse at 80% 80%, rgba(5,0,30,0.6), transparent 20%)}
+.blob{position:absolute;border-radius:50%;filter:blur(28px);mix-blend-mode:screen;opacity:1}
+.blob.a{width:780px;height:780px;left:-10%;top:6%;background:radial-gradient(circle at 30% 30%, rgba(255,90,85,1), rgba(255,50,120,0.9) 45%, rgba(255,50,120,0) 75%);box-shadow:0 80px 180px rgba(255,60,100,0.22);animation:da 18s cubic-bezier(.2,.8,.2,1) infinite}
+.blob.b{width:680px;height:680px;right:-12%;top:2%;background:radial-gradient(circle at 35% 35%, rgba(0,230,255,1), rgba(80,60,255,0.95) 45%, rgba(80,60,255,0) 75%);box-shadow:0 80px 180px rgba(30,120,255,0.16);animation:db 20s cubic-bezier(.2,.8,.2,1) infinite}
+.blob.c{width:520px;height:520px;left:18%;bottom:-8%;background:radial-gradient(circle at 35% 35%, rgba(200,80,255,1), rgba(120,60,200,0.95) 45%, rgba(120,60,200,0) 75%);box-shadow:0 60px 140px rgba(150,80,220,0.12);animation:dc 16s cubic-bezier(.2,.8,.2,1) infinite}
+.orb{position:absolute;border-radius:50%;filter:blur(8px);mix-blend-mode:screen;opacity:0.98}
+.orb.o1{width:220px;height:220px;left:46%;top:14%;background:linear-gradient(135deg,#ffd86b,#ff7aa2);animation:o1 6s ease-in-out infinite}
+.orb.o2{width:160px;height:160px;right:36%;top:24%;background:linear-gradient(135deg,#00e5ff,#7a5bff);animation:o2 7s ease-in-out infinite}
 
-/* bright accent orbs for depth */
-.orb{position:absolute;border-radius:50%;mix-blend-mode:screen;filter:blur(6px);opacity:0.9}
-.orb.o1{width:180px;height:180px;left:48%;top:18%;background:linear-gradient(135deg,rgba(255,200,80,0.95),rgba(255,120,60,0.85));transform:translateZ(0);animation:orb1 8s linear infinite}
-.orb.o2{width:120px;height:120px;right:36%;top:26%;background:linear-gradient(135deg,rgba(0,220,255,0.95),rgba(80,120,255,0.85));animation:orb2 10s linear infinite}
+/* high-contrast particles */
+.particles{position:absolute;inset:0;background-image:radial-gradient(circle,#ffffff 1px, transparent 1px);background-size:14px 14px;opacity:0.28;mix-blend-mode:overlay;filter:blur(0.6px)}
 
-/* subtle starfield */
-.particles{position:absolute;inset:0;pointer-events:none;z-index:-2;background-image:radial-gradient(circle,#ffffff 1px, transparent 1px);background-size:10px 10px;opacity:0.35;mix-blend-mode:overlay;filter:blur(0.8px);transform:translateZ(0)}
-
-/* keyframes */
-@keyframes gradShift{0%{transform:translateX(-6%) scale(1.05)}50%{transform:translateX(6%) scale(1.08)}100%{transform:translateX(-6%) scale(1.05)}}
-@keyframes move1{0%{transform:translate(0,0) scale(1)}25%{transform:translate(60px,-40px) scale(1.04)}50%{transform:translate(0,-60px) scale(1)}75%{transform:translate(-40px,30px) scale(0.98)}100%{transform:translate(0,0) scale(1)}}
-@keyframes move2{0%{transform:translate(0,0) scale(1)}30%{transform:translate(-50px,50px) scale(1.03)}60%{transform:translate(30px,-50px) scale(0.98)}100%{transform:translate(0,0) scale(1)}}
-@keyframes move3{0%{transform:translate(0,0) scale(1)}20%{transform:translate(-40px,-30px) scale(1.05)}50%{transform:translate(20px,40px) scale(1)}80%{transform:translate(-20px,-10px) scale(0.98)}100%{transform:translate(0,0) scale(1)}}
-@keyframes orb1{0%{transform:translateY(0)}50%{transform:translateY(-18px)}100%{transform:translateY(0)}}
-@keyframes orb2{0%{transform:translateY(0)}50%{transform:translateY(14px)}100%{transform:translateY(0)}}
+/* keyframes dynamic */
+@keyframes da{0%{transform:translate(0,0) scale(1)}20%{transform:translate(80px,-40px) scale(1.05)}40%{transform:translate(0,-120px) scale(1)}60%{transform:translate(-60px,40px) scale(0.98)}80%{transform:translate(40px,20px) scale(1.02)}100%{transform:translate(0,0) scale(1)}}
+@keyframes db{0%{transform:translate(0,0) scale(1)}25%{transform:translate(-80px,60px) scale(1.03)}50%{transform:translate(80px,-80px) scale(1)}75%{transform:translate(-30px,30px) scale(0.99)}100%{transform:translate(0,0) scale(1)}}
+@keyframes dc{0%{transform:translate(0,0) scale(1)}30%{transform:translate(-40px,-30px) scale(1.06)}60%{transform:translate(20px,60px) scale(1)}100%{transform:translate(0,0) scale(1)}}
+@keyframes o1{0%{transform:translateY(0)}50%{transform:translateY(-22px)}100%{transform:translateY(0)}}
+@keyframes o2{0%{transform:translateY(0)}50%{transform:translateY(18px)}100%{transform:translateY(0)}}
 
 /* content layout */
-.container{position:relative;z-index:3;max-width:1400px;width:100%;padding:48px;display:flex;flex-direction:column;align-items:flex-start;gap:18px}
-.logo{height:160px}
-.title{font-size:92px;line-height:1.02;font-weight:800;letter-spacing:-0.6px;text-shadow:0 18px 60px rgba(0,0,0,0.6)}
+.container{position:relative;z-index:4;max-width:1400px;width:100%;padding:48px;display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+.logo{height:180px}
+.title{font-size:104px;line-height:1.02;font-weight:800;letter-spacing:-0.6px;text-shadow:0 22px 60px rgba(0,0,0,0.7)}
 .subline{font-size:22px;color:var(--muted);padding-bottom:14px;position:relative}
-.subline:after{content:'';position:absolute;left:0;bottom:-6px;height:6px;width:72px;background:var(--white);opacity:.12;border-radius:8px}
-.lead{color:rgba(255,255,255,0.95);max-width:980px;font-size:20px;line-height:1.6}
+.subline:after{content:'';position:absolute;left:0;bottom:-6px;height:6px;width:84px;background:var(--white);opacity:.14;border-radius:10px}
+.lead{color:rgba(255,255,255,0.98);max-width:980px;font-size:20px;line-height:1.6}
 
 /* sections */
 .section-inner{max-width:1200px;width:100%;margin:0 auto;padding:60px;display:flex;flex-direction:column;gap:20px}
-.section h2{font-size:40px;margin-bottom:8px}
-.section p{color:rgba(255,255,255,0.9);max-width:900px;line-height:1.7}
+.section h2{font-size:44px;margin-bottom:10px}
+.section p{color:rgba(255,255,255,0.95);max-width:900px;line-height:1.7}
 
 /* hamburger */
 .hamburger{position:fixed;right:28px;top:28px;z-index:9999}
@@ -59,22 +50,18 @@ html,body{height:100%;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto;
 .menu-btn span:before{top:-9px}.menu-btn span:after{top:9px}
 
 /* responsive */
-@media(max-width:1200px){.container{padding-left:64px;padding-right:64px}.title{font-size:64px}.logo{height:120px}}
-@media(max-width:780px){html,body{overflow:auto}.title{font-size:34px}.logo{height:72px}.container{align-items:center;text-align:center;padding:24px}} 
-</style>
-</head>
-<body>
+@media(max-width:1200px){.container{padding-left:64px;padding-right:64px}.title{font-size:64px}.logo{height:140px}}
+@media(max-width:780px){html,body{overflow:auto}.title{font-size:34px}.logo{height:84px}.container{align-items:center;text-align:center;padding:24px}} 
+</style></head><body>
 <div class="bg-scene" aria-hidden="true">
-  <div class="gradient-back"></div>
-  <div class="blob w1"></div>
-  <div class="blob c1"></div>
-  <div class="blob m1"></div>
+  <div class="blob a"></div>
+  <div class="blob b"></div>
+  <div class="blob c"></div>
   <div class="orb o1"></div>
   <div class="orb o2"></div>
   <div class="particles"></div>
 </div>
 
-<!-- Fullpage sections -->
 <div class="fullpage hero" id="hero">
   <div class="container">
     <img src="logo-white.png" class="logo" alt="Tara Creatives logo">
@@ -110,7 +97,6 @@ html,body{height:100%;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto;
 </div>
 
 <script>
-// Fullpage scroll behavior: wheel/keys/touch -> next section
 (function(){
   const sections = Array.from(document.querySelectorAll('.fullpage'));
   let isScrolling = false;
@@ -137,6 +123,4 @@ html,body{height:100%;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto;
   sections.forEach((sec, idx)=>{ sec.addEventListener('click', ()=>{ if(window.innerWidth > 780) scrollToIndex(idx+1); }); });
   window.addEventListener('load', ()=>{ sections[0].scrollIntoView(); });
 })();
-</script>
-</body>
-</html>
+</script></body></html>

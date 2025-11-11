@@ -1,1 +1,1 @@
-Tara Creatives — Digital Vibe build. Animated CSS background (mixed warm+cool). Deploy to Vercel.
+Tara Creatives — Dynamic Digital Vibe build. High contrast animated CSS background.
